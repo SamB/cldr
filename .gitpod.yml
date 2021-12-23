@@ -5,6 +5,8 @@ tasks:
   - before: |
       mkdir ~/.m2
       cp .github/workflows/mvn-settings.xml ~/.m2/settings.xml
+    init: |
+      sdk install java 8.0.312.fx-zulu
     command: |
       mvn verify
 
