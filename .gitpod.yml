@@ -1,0 +1,23 @@
+
+tasks:
+  # NOTE: for this to work, you'll need to set up GITHUB_ACTOR and
+  # GITHUB_TOKEN variables.  The needed scope is "read:packages".
+  - before: |
+      mkdir ~/.m2
+      cp .github/workflows/mvn-settings.xml ~/.m2/settings.xml
+    command: |
+      mvn verify
+
+ports:
+- port: 666
+
+vscode:
+  extensions:
+    - vscjava.vscode-java-pack
+    # And its dependencies:
+    - redhat.java
+    - vscjava.vscode-java-debug
+    - vscjava.vscode-java-test
+    - vscjava.vscode-maven
+    - vscjava.vscode-java-dependency
+
